@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {resolve} from 'url';
 
 const routes: Routes = [
     {
@@ -10,7 +11,7 @@ const routes: Routes = [
         path: 'profile',
         loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
     }, {
-        path: 'article',
+        path: 'article/:id',
         loadChildren: () => import('./article/article.module').then(m => m.ArticleModule)
     }
 ];
