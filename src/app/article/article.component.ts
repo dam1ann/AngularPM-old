@@ -1,4 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ArticleInterface} from '../core/models/article.interface';
+import {ArticlesService} from '../core/services/articles.service';
+import {CommentInterface} from '../core/models/comment.interface';
 
 @Component({
     selector: 'app-article',
@@ -7,10 +11,24 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-    constructor() {
+    article: ArticleInterface;
+    comments: Array<CommentInterface>;
+
+    constructor(private route: ActivatedRoute,
+                private articlesService: ArticlesService) {
     }
 
     ngOnInit() {
+        this.route.params.subscribe(params => {
+
+            this.articlesService.getArticle(Number(params.id)).subscribe(article => {
+                this.article = article;
+            });
+
+            this.articlesService.getComments((Number(params.id))).subscribe(comments => {
+                this.comments = comments;
+            });
+        });
     }
 
 }

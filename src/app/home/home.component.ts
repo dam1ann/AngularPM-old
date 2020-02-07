@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ArticlesService} from '../core/services/articles.service';
+import {ArticleInterface} from '../core/models/article.interface';
 
 @Component({
     selector: 'app-home',
@@ -7,10 +9,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-    constructor() {
+    articles: Array<ArticleInterface>;
+
+    constructor(private articlesService: ArticlesService) {
     }
 
     ngOnInit() {
+        this.articlesService.getArticles()
+            .subscribe(articles => {
+                this.articles = articles;
+            });
     }
 
 }
