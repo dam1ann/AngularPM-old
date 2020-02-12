@@ -1,24 +1,34 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {ArticlesService} from '../core/services/articles.service';
 import {ArticleInterface} from '../core/models/article.interface';
+import {GraphqlService} from '../core/services/graphql.service';
+
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    styleUrls: ['./home.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
-    articles: Array<ArticleInterface>;
 
-    constructor(private articlesService: ArticlesService) {
+    destinations: Array<any>;
+
+
+    constructor(private articlesService: ArticlesService,
+                private graph: GraphqlService) {
     }
 
     ngOnInit() {
-        this.articlesService.getArticles()
-            .subscribe(articles => {
-                this.articles = articles;
+        this.graph
+            .getDestinations()
+            .subscribe(({data}) => {
+                console.log(data.destinations);
+                this.destinations = data.destiations;
             });
     }
 
+    ngOnDestroy(): void {
+    }
 }

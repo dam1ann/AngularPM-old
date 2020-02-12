@@ -7,6 +7,8 @@ import {SharedModule} from './shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CoreModule} from './core/core.module';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import {CoreModule} from './core/core.module';
         ReactiveFormsModule,
         AppRoutingModule,
         SharedModule,
-        CoreModule.forRoot()
+        CoreModule.forRoot(),
+        GraphQLModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

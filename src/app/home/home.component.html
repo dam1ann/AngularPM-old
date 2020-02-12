@@ -1,6 +1,6 @@
 <section class="feed-section">
     <div class="container mt-5 mb-5">
-        <div *ngFor="let article of articles"
+        <div *ngFor="let destination of destinations"
              [routerLink]="['/article', article.id]"
              class="card w-100 text-white  mb-3" >
             <div class="card-header">{{article.title}}</div>
