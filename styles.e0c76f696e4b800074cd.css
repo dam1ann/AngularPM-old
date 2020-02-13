@@ -1,0 +1,1 @@
+:root{--main-color:rgb(21, 32, 43);--border-color:rgb(56, 68, 77)}body,html{background:var(--main-color)}.card,.card-body,.card-header{background:0 0;border-color:var(--border-color)}
