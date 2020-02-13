@@ -1,4 +1,4 @@
-import {Destination, Image} from './index';
+import {Destination, Image, Review} from './index';
 
 export default interface Hotel {
     status;
@@ -13,5 +13,5 @@ export default interface Hotel {
     website?: string;
     photos: Array<Image>;
     destinations?: Array<Destination>;
-    reviews?: Array<Destination>;
+    reviews?: Array<Review>;
 }

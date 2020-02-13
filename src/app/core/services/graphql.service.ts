@@ -172,7 +172,15 @@ export class GraphqlService {
                         id
                     }
                     reviews {
-                        id
+                        id,
+                        status
+                        updatedAt
+                        createdAt
+                        attribution
+                        content {
+                            raw
+                            html
+                        }
                     }
                 }
             }
