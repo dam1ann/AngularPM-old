@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {resolve} from 'url';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
     {
@@ -10,9 +9,14 @@ const routes: Routes = [
     {
         path: 'profile',
         loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
-    }, {
-        path: 'article/:id',
-        loadChildren: () => import('./article/article.module').then(m => m.ArticleModule)
+    },
+    {
+        path: 'hotel/:id',
+        loadChildren: () => import('./hotel/hotel.module').then(m => m.HotelModule)
+    },
+    {
+        path: 'destination/:id',
+        loadChildren: () => import('./destination/destination.module').then(m => m.DestinationModule)
     }
 ];
 

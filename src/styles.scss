@@ -9,3 +9,11 @@
 html, body{
   background: var(--main-color);
 }
+
+
+.card-header,
+.card-body,
+.card {
+  background: transparent;
+  border-color: var(--border-color);
+}
