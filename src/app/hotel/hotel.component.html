@@ -9,18 +9,43 @@
     <div class="container">s
         <h2 class="destination__name text-white">{{hotel.name}}</h2>
 
-        <h3 class="text-white mt-5 mb-3">Description </h3>
-        <p class="text-white text__description">{{hotel.description}}</p>
+        <div class="social mt-3 d-flex">
+            <div class="btn btn-primary">
+                <img src="../../assets/heart.svg" alt="like" class="svg-small">
+            </div>
+            <div class="btn btn-outline-info ml-2">Share</div>
+        </div>
 
-        <h3 class="text-white mt-5 mb-2">Reviews</h3>
+        <p class="text-white text__description mt-5">{{hotel.description}}</p>
+
+
+        <h3 class="text-white mt-5 mb-2">Most popular facilities</h3>
+        <ng-container *ngFor="let amentity of hotel.amenities">
+            <span class="badge badge-pill badge-success">{{amentity}}</span>
+        </ng-container>
+
+
+        <h3 class="text-white mt-5 mb-2">Contact</h3>
+
+        <div class="mb-3">
+            <img src="../../assets/phone.svg" alt="phone" class="svg">
+            <a href="">
+                {{hotel.phone}}</a>
+        </div>
+        <div>
+            <img src="../../assets/global.svg" alt="website" class="svg">
+            <a href="">{{hotel.rooms}}</a>
+        </div>
+
+
+        <h3 class="text-white mt-5 mb-3">Reviews</h3>
 
         <div class="d-flex justify-content-between flex-nowrap opinion__container mb-3">
             <div *ngFor="let review of hotel.reviews"
                  class="card  mb-3" style="max-width: 18rem;">
                 <div class="card-header text-white">{{review.attribution}}</div>
                 <div class="card-body text-primary text-white">
-<!--                    <h5 class="card-title">{{review.}}</h5>-->
-                    <p class="card-text">{{review.content.html}}</p>
+                    <p class="card-text" [innerHTML]="review.content.html"></p>
                 </div>
             </div>
         </div>

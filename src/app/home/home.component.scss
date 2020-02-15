@@ -5,11 +5,19 @@
 
 .card {
   position: relative;
-  max-width: 23rem;
   border: none;
-  box-shadow: 0 1.5rem 3rem rgba(0,0,0,.5);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .5);
 }
 
-.btn{
+.btn {
   border-radius: 4px;
 }
+
+
+@media(min-width: 768px) {
+  .card{
+    max-width: 20rem;
+  }
+}
+
+

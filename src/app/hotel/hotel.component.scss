@@ -1,4 +1,29 @@
 .image__container,
-.opinion__container{
+.opinion__container {
   overflow-x: scroll;
+}
+
+.badge {
+  margin-right: 5px;
+}
+
+.svg {
+  height: 30px;
+  filter: invert(1);
+
+  & + a {
+    margin-left: 10px;
+  }
+}
+
+
+
+.svg-small{
+  height: 20px;
+  filter: invert(1);
+}
+
+
+.btn{
+  border-radius: 10px;
 }

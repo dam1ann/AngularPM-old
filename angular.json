@@ -125,7 +125,14 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "builder": "angular-cli-ghpages:deploy",
+            "options": {
+              "baseHref": "https://dam1ann.github.io/AngularPM/",
+              "name": "Angular PM",
+              "email": "damiannnurzynski@gmail.com"
+            }
+          }
         }
       }
     }
