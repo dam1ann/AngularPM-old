@@ -1,29 +1,54 @@
 .image__container,
 .opinion__container {
-  overflow-x: scroll;
+	overflow-x: scroll;
+
+
+	img {
+		height: auto;
+		width: auto;
+		max-height: 500px;
+	}
+
 }
 
 .badge {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 .svg {
-  height: 30px;
-  filter: invert(1);
+	height: 30px;
+	filter: invert(1);
 
-  & + a {
-    margin-left: 10px;
-  }
+	& + a {
+		margin-left: 10px;
+	}
 }
 
 
-
-.svg-small{
-  height: 20px;
-  filter: invert(1);
+.svg-small {
+	height: 20px;
+	filter: invert(1);
 }
 
 
-.btn{
-  border-radius: 10px;
+.btn {
+	border-radius: 10px;
+}
+
+
+::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+	width: 0;
+	background: transparent;
+}
+
+
+.contact__phone,
+.contact__website {
+	font-size: 18px;
 }
